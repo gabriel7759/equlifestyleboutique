@@ -1,0 +1,1 @@
+		<p><?=__('Welcome to the administration interface for')?> <strong><?=$sitename?></strong>.</p>

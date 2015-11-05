@@ -1,0 +1,398 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'GothamBold';
+    src: url('../fonts/gotham/GothamBold.eot');
+    src: url('../fonts/gotham/GothamBold.eot') format('embedded-opentype'),
+         url('../fonts/gotham/GothamBold.woff2') format('woff2'),
+         url('../fonts/gotham/GothamBold.woff') format('woff'),
+         url('../fonts/gotham/GothamBold.ttf') format('truetype'),
+         url('../fonts/gotham/GothamBold.svg#GothamBold') format('svg');
+	 font-weight: normal;
+}
+
+@font-face {
+    font-family: 'GothamBook';
+    src: url('../fonts/gotham/GothamBook.eot');
+    src: url('../fonts/gotham/GothamBook.eot') format('embedded-opentype'),
+         url('../fonts/gotham/GothamBook.woff2') format('woff2'),
+         url('../fonts/gotham/GothamBook.woff') format('woff'),
+         url('../fonts/gotham/GothamBook.ttf') format('truetype'),
+         url('../fonts/gotham/GothamBook.svg#GothamBook') format('svg');
+}
+
+@font-face {
+    font-family: 'GothamMedium';
+    src: url('../fonts/gotham/GothamMedium.eot');
+    src: url('../fonts/gotham/GothamMedium.eot') format('embedded-opentype'),
+         url('../fonts/gotham/GothamMedium.woff2') format('woff2'),
+         url('../fonts/gotham/GothamMedium.woff') format('woff'),
+         url('../fonts/gotham/GothamMedium.ttf') format('truetype'),
+         url('../fonts/gotham/GothamMedium.svg#GothamMedium') format('svg');
+}
+
+@font-face {
+    font-family: 'TundraWebProBold';
+    src: url('../fonts/tundra/TundraWebProBold.eot');
+    src: url('../fonts/tundra/TundraWebProBold.eot') format('embedded-opentype'),
+         url('../fonts/tundra/TundraWebProBold.woff2') format('woff2'),
+         url('../fonts/tundra/TundraWebProBold.woff') format('woff'),
+         url('../fonts/tundra/TundraWebProBold.ttf') format('truetype'),
+         url('../fonts/tundra/TundraWebProBold.svg#TundraWebProBold') format('svg');
+}
+@font-face {
+    font-family: 'TundraWebProLight';
+    src: url('../fonts/tundra/TundraWebProLight.eot');
+    src: url('../fonts/tundra/TundraWebProLight.eot') format('embedded-opentype'),
+         url('../fonts/tundra/TundraWebProLight.woff2') format('woff2'),
+         url('../fonts/tundra/TundraWebProLight.woff') format('woff'),
+         url('../fonts/tundra/TundraWebProLight.ttf') format('truetype'),
+         url('../fonts/tundra/TundraWebProLight.svg#TundraWebProBold') format('svg');
+}
+@font-face {
+    font-family: 'TundraWebProMedium';
+    src: url('../fonts/tundra/TundraWebProMedium.eot');
+    src: url('../fonts/tundra/TundraWebProMedium.eot') format('embedded-opentype'),
+         url('../fonts/tundra/TundraWebProMedium.woff2') format('woff2'),
+         url('../fonts/tundra/TundraWebProMedium.woff') format('woff'),
+         url('../fonts/tundra/TundraWebProMedium.ttf') format('truetype'),
+         url('../fonts/tundra/TundraWebProMedium.svg#TundraWebProBold') format('svg');
+}
+
+
+
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+/* For IE 6/7 only */
+.clearfix {
+    *zoom: 1;
+}
+
+
+body, html {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family:"TundraWebProMedium", Arial, sans-serif;
+	color: #000;
+	font-size: 15px;
+	background: #fff;
+/*
+	background: url(../img/frontend/lines.png) center repeat-y;
+*/
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+	outline: none;
+}
+
+section {
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+header {
+	width: 100%;
+}
+
+header .logo {
+	text-align: center;
+	background: #000;
+	width: 100%;
+	padding-top: 50px;
+	height: 208px;
+}
+
+section.menu {
+	height: 72px;
+	line-height: 72px;
+	font-family: "GothamBook";
+	font-size: 16px;
+	text-transform: uppercase;
+	text-align: center;
+	position: relative;
+}
+
+section.menu span {
+	width: 130px;
+	content: " ";
+	padding: 0 60px;
+	background: url(../img/frontend/menu_line.png) center 5px no-repeat;
+}
+
+section.menu ul.social {
+	position: absolute;
+	top: 25px;
+	right: 50px;
+	width: 90px;
+	overflow: hidden;
+}
+
+section.menu ul.social li {
+	width: 18px;
+	height: 18px;
+	float: left;
+	margin-right: 10px;
+}
+section.menu ul.social li a {
+	width: 18px;
+	height: 18px;
+	display: block;
+	text-indent: -5000px;
+	background-image: url(../img/frontend/icons.png);
+	background-repeat: no-repeat;
+}
+
+section.menu ul.social li a.fb {
+	background-position: 0 -18px;
+}
+section.menu ul.social li a.vmo {
+	background-position: 0 -36px;
+}
+
+section.full {
+	width: 100%;
+}
+section.full.image {
+	height: 580px;
+}
+
+section.full.image h2 {
+	font-family: "TundraWebProBold";
+	font-weight: normal;
+	color: #fff;
+	font-size: 60px;
+	text-align: center;
+	width: 100%;
+	margin: 220px 0 0 0;
+	text-shadow: 0px 0px 5px #999;
+}
+
+section.full.image h3 {
+	font-family: "TundraWebProMedium";
+	font-style: italic;
+	font-weight: normal;
+	color: #fff;
+	font-size: 30px;
+	text-align: center;
+	width: 100%;
+	margin: 0;
+	text-shadow: 0px 0px 5px #999;
+}
+
+section.menu.submenu {
+	font-family: "TundraWebProLight";
+	text-transform: lowercase;
+	font-size: 24px;
+}
+
+ul.listing {
+	width: 1200px;
+	overflow: hidden;
+	background: url(../img/frontend/vline.png) center top no-repeat;
+}
+ul.listing li {
+	float: left;
+	width: 270px;
+	height: 270px;
+	overflow: hidden;
+	margin-right: 25px;
+	margin-bottom: 25px;
+	position: relative;
+}
+ul.listing li:nth-child(4n+2) {
+	margin-right: 70px;
+}
+ul.listing li:nth-child(4n) {
+	margin-right: 0px;
+}
+ul.listing li img {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+ul.listing li a {
+	text-align: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding-top: 100px;
+	width:270px;
+	height:170px;
+	font-family: "TundraWebProMedium";
+	font-style: italic;
+	font-weight: normal;
+	color: #fff;
+	opacity: 0;
+	font-size: 12px;
+	background: url(../img/frontend/sqrbg1.png) no-repeat;
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s;
+}
+
+ul.listing li a:hover {
+	opacity: 1;
+}
+
+ul.listing li a span {
+	font-style: normal;
+	font-family: "TundraWebProBold";
+	font-weight: normal;
+	font-size: 20px;
+}
+
+section.contact {
+	width: 800px;
+	font-family: "GothamBook";
+}
+
+section.contact ul {
+	width: 100%;
+	overflow: hidden;
+}
+
+section.contact ul li {
+	width: 100%;
+	float: left;
+	padding: 20px 0;
+}
+
+form.contact {
+	margin-top: 50px;
+}
+
+form.contact label {
+	width: 100%;
+}
+form.contact label span {
+	text-transform: uppercase;
+	font-size: 18px;
+	line-height: 38px;
+}
+form.contact label input {
+	float:right;
+	line-height: 38px;
+	padding: 0 10px;
+	width: 670px;
+	border: none;
+	font-family: "GothamBook";
+	font-size: 16px;
+	background: #e7e7e7;
+	color: #000;
+}
+form.contact label textarea {
+	float:right;
+	font-family: "GothamBook";
+	font-size: 16px;
+	line-height: 20px;
+	padding: 10px;
+	height: 300px;
+	width: 670px;
+	border: none;
+	background: #e7e7e7;
+	color: #000;
+}
+
+form.contact button {
+	float:right;
+	font-family: "GothamBook";
+	font-size: 16px;
+	background: #000;
+	color: #fff;
+	border: none;
+	text-transform: uppercase;
+	line-height: 40px;
+	padding: 0 50px;
+}
+
+section.nosotros {
+	padding-top: 100px;
+	margin: 0 auto;
+	width: 1200px;
+}
+
+section.nosotros > ul {
+	float: left;
+	width: 1200px;
+	overflow: hidden;
+}
+section.nosotros > ul li.title {
+	font-family: "GothamBold";
+	font-weight: normal;
+	font-size: 16px;
+	padding-bottom: 30px;
+}
+section.nosotros > ul > li {
+	float: left;
+	width: 600px;
+	overflow: hidden;
+	text-align: center;
+	font-family: "GothamBook";
+	font-size: 14px;
+	text-transform: uppercase;
+	line-height: 30px;
+}
+section.nosotros > ul > li ul li {
+	padding-bottom: 20px;
+}
+section.nosotros > ul > li ul li strong {
+	font-family: "GothamBold";
+	font-weight: normal;
+}
+
+section.note {
+	width: 930px;
+}
+section.note h1 {
+	font-weight: "TundraWebProBold";
+	text-align: center;
+	font-weight: normal;
+	margin: 65px 0 0 0;
+	font-size: 45px;
+}
+section.note h4 {
+	margin: 0 0 40px 0;
+	font-weight: "TundraWebProLight";
+	text-align: center;
+	font-style: italic;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+section.note article {
+	float: left;
+	overflow: hidden;
+	width: 100%;
+	font-size: 20px;
+	line-height: 1.5em;
+}
+section.note article.intro {
+	font-family: "TundraWebProLight";
+	text-align: center;
+	font-style: italic;
+	font-size: 24px;
+	background: url(../img/frontend/hr.png) center bottom no-repeat;
+	padding-bottom: 40px;
+	margin-bottom: 20px;
+}

@@ -1,0 +1,236 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+/* For IE 6/7 only */
+.clearfix {
+    *zoom: 1;
+}
+
+
+@font-face{
+	font-family:'BlissRegular';
+	src:url("../fonts/blissRegular.eot");
+	src:url("../fonts/blissRegular.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/blissRegular.woff") format("woff"),
+		url("../fonts/blissRegular.ttf") format("truetype"),
+		url("../fonts/blissRegular.svg#blissRegular") format("svg");
+	font-weight:normal;
+	font-style:normal
+}
+
+body, html {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+    zoom: 0.55; /*workaround for phantomJS2 rendering pages too large*/
+}
+
+body {
+	font-family:"BlissRegular", 'Gill Sans', Calibri, 'Helvetica Neue', Arial, sans-serif;
+	color: #888;
+	font-size: 18px;
+	background: #fff;
+/*
+	background: url(../img/frontend/lines.png) center repeat-y;
+*/
+}
+
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+
+header {
+	width: 940px;
+	overflow:hidden;
+	margin: 30px auto 25px auto;
+}
+header div {
+	float: right;
+}
+
+section {
+	width: 940px;
+	overflow: hidden;
+	margin: 0 auto;
+	border-bottom: 1px dashed #868889;
+	padding-bottom: 20px;
+}
+
+
+section h4 {
+	float: left;
+	width: 100%;
+	color:#0070AD;
+	font-weight: normal;
+	font-size: 24px;
+}
+section h4 span {
+	color: #868889;
+}
+
+
+section ul {
+	float: left;
+	overflow:hidden;
+}
+section ul li {
+	float: left;
+	margin-right: 50px;
+}
+section ul li strong {
+	color: #0070AD;
+	font-weight: normal;
+	white-space: nowrap;
+}
+
+section ul.mininfo li:last-child {
+	margin-right: 0;
+}
+section ul.mininfo li {
+	max-width: 220px;
+}
+
+section#house_list ul li:last-child {
+	margin-right: 0;
+}
+
+section p {
+	float: left;
+	clear: left;
+	width: 100%;	
+}
+section p strong {
+	color: #0070AD;
+	font-weight: normal;
+}
+
+ul.othercosts {
+	float: left;
+	width: 100%;
+}
+ul.othercosts li {
+	overflow: hidden;
+	border-top: 1px solid #D6D6D6;
+	line-height: 25px;
+	width: 915px;
+	padding: 5px 0 5px 25px;
+	background: url(../img/frontend/line.png) 770px 0 repeat-y;
+}
+ul.othercosts li p {
+	margin: 0;
+	max-width: 740px;
+}
+ul.othercosts li div.minepris {
+	float: right;
+	width: 160px;
+	height: 100%;
+	padding: 0 5px;
+	text-align: right;
+}
+ul.othercosts li div span {
+	color: #B8B8B8;
+}
+ul.othercosts li div.defaultpris {
+	float: right;
+	padding: 0 10px 0 0;
+	text-align: right;
+	white-space: nowrap;
+}
+ul.othercosts li.sectSum {
+	background: #EBEFF0;
+}
+ul.othercosts li.sectSumTotal {
+	color: #fff;
+	background: #0070AD;
+	line-height: 54px;
+	font-size: 20px;
+}
+ul.othercosts li.sectSumTotal div {
+	border: none;
+}
+ul.othercosts li.sectSumTotal div span {
+	color: #fff;
+}
+
+
+ul.othercosts.addons {
+	border-bottom: 1px solid #D6D6D6;
+}
+
+ul.includedaddons {
+	float: left;
+	width: 940px;
+	overflow: hidden;
+	border-bottom: 1px solid #EBEFF0;
+}
+ul.includedaddons li {
+	overflow: hidden;
+	float: left;
+	padding: 0 25px;
+	border-top: 1px solid #EBEFF0;
+	border-right: 1px solid #EBEFF0;
+	line-height: 35px;
+	width: 419px;
+	margin: 0;
+}
+ul.includedaddons li:nth-child(even) {
+	border-right: none;
+}
+ul.includedaddons li span {
+	float: right;
+}
+
+ul.rombeskrivelse li {
+	overflow: hidden;
+	float: left;
+	padding: 7px 0;
+	line-height: 15px;
+	width: 188px;
+	margin: 0;
+	font-size: 12px;
+}
+ul.rombeskrivelse li.tit {
+	color: #0070AD;
+	font-size: 18px;
+}
+ul.rombeskrivelse li.first {
+	clear: left;
+	width: 148px;
+}
+ul.rombeskrivelse li.last {
+	width: 228px;
+}
+
+dl.generelt {
+	float: left;
+	overflow: hidden;
+	line-height: 25px;
+	margin-top: 0;
+}
+dl.generelt dt {
+	background: url(../img/frontend/oval.png) 0 7px no-repeat;
+	float: left;
+	clear: left;
+	width: 450px;
+	padding-left: 25px;
+}
+dl.generelt dd {
+	float: left;
+}
+
+

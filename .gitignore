@@ -1,0 +1,9 @@
+application/config/database.php
+application/config/development/*
+application/config/staging/*
+application/config/production/*
+assets/files/*
+*sass-cache
+robots.txt
+.DS_Store
+Thumbs.db
