@@ -1,48 +1,36 @@
-<section class="full image" style="background-image: url(assets/files/images/East-Greenland-Feature.jpg); background-position: 50% 50%; background-size: cover; background-repeat: no-repeat;">
-	<h2>Barrancas del Cobre</h2>
-	<h3>expedición 2015</h3>
-</section>
-<section class="menu submenu">
-	<a href="#">Naturaleza oculta</a>
-	<span></span>
-	<a href="#">Ciudades inesperadas</a>
-	<span></span>
-	<a href="#">Experiencias inolvidables</a>
-</section>
-<section>
-<ul class="listing">
-<?php
-	foreach($experiences as $exps){
-		$date = explode('-', $exps['postdate']);
-?>
-	<li><img src="assets/files/experiences/cover/<?=$exps['coverimage']?>" width="270" height="270" /><a href="experiencias/<?=$date[0]?>/<?=$date[1]?>/<?=$exps['slug']?>"><span><?=$exps['title']?></span><br />Por: <?=$exps['author']?></a></li>
-<?php
-}
-?>
-<!--
-	<li><img src="assets/files/images/menu2.jpg" width="270" height="270" /><a href="experiencias/2015/10/diario-oaxaca"><span>Mountains</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu3.jpg" width="270" height="270" /><a href="experiencias/2015/10/diario-oaxaca"><span>Hiking morning</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu4.jpg" width="270" height="270" /><a href="experiencias/2015/10/diario-oaxaca"><span>Living in paradise</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu1.jpg" width="270" height="270" /><a href="experiencias/2015/10/diario-oaxaca"><span>Diario Oaxaca</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu2.jpg" width="270" height="270" /><a href="experiencias/2015/10/diario-oaxaca"><span>Mountains</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu3.jpg" width="270" height="270" /><a href="#"><span>Hiking morning</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu4.jpg" width="270" height="270" /><a href="#"><span>Living in paradise</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu1.jpg" width="270" height="270" /><a href="#"><span>Diario Oaxaca</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu2.jpg" width="270" height="270" /><a href="#"><span>Mountains</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu3.jpg" width="270" height="270" /><a href="#"><span>Hiking morning</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu4.jpg" width="270" height="270" /><a href="#"><span>Living in paradise</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu1.jpg" width="270" height="270" /><a href="#"><span>Diario Oaxaca</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu2.jpg" width="270" height="270" /><a href="#"><span>Mountains</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu3.jpg" width="270" height="270" /><a href="#"><span>Hiking morning</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu4.jpg" width="270" height="270" /><a href="#"><span>Living in paradise</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu3.jpg" width="270" height="270" /><a href="#"><span>Hiking morning</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu4.jpg" width="270" height="270" /><a href="#"><span>Living in paradise</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu1.jpg" width="270" height="270" /><a href="#"><span>Diario Oaxaca</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu2.jpg" width="270" height="270" /><a href="#"><span>Mountains</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu3.jpg" width="270" height="270" /><a href="#"><span>Hiking morning</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu4.jpg" width="270" height="270" /><a href="#"><span>Living in paradise</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu1.jpg" width="270" height="270" /><a href="#"><span>Diario Oaxaca</span><br />Por: Miguel Rivera</a></li>
-	<li><img src="assets/files/images/menu2.jpg" width="270" height="270" /><a href="#"><span>Mountains</span><br />Por: Miguel Rivera</a></li>
--->
-</ul>
-</section>
+	<section class="top">
+    	<article class="inner">
+        	<div class="content">
+            	<h1>EquLifestyle</h1>
+                <p>Our website will go live in</p>
+                
+                <ul>
+                    <li><span id="days">00</span>days</li>
+                    <li><span id="hours">00</span>hours</li>
+                    <li><span id="minutes">00</span>minuts</li>
+                    <li><span id="seconds">00</span>seconds</li>
+                </ul>
+                
+                <form>
+                	<input type="text" placeholder="Your name">
+                	<input type="text" placeholder="Your email">
+                    <button>Subscribe</button>
+                </form>
+            </div>
+        	
+        </article>
+    </section>
+    <section class="instagram">
+    	<article class="inner">
+        	
+            <div>
+            	<p>Equlifestyleboutique <span>on Instagram</span></p>
+                
+                <!-- INSTANSIVE WIDGET -->
+				<script src="//instansive.com/widget/js/instansive.js"></script>
+                <iframe src="//instansive.com/widgets/8af34758672a6a50a5f9adb78cf068071248c326.html" id="instansive_8af3475867" name="instansive_8af3475867"  scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+                
+            </div>
+            
+        </article>
+    </section>
