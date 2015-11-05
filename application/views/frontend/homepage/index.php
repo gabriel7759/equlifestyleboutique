@@ -7,7 +7,7 @@
                 <ul>
                     <li><span id="days">00</span>days</li>
                     <li><span id="hours">00</span>hours</li>
-                    <li><span id="minutes">00</span>minuts</li>
+                    <li><span id="minutes">00</span>minutes</li>
                     <li><span id="seconds">00</span>seconds</li>
                 </ul>
                 

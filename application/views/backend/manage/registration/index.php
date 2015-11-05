@@ -25,7 +25,7 @@
 							<p><?=__('Use the filters below to refine the results shown in the list')?>.</p>
 						</li>
 						<li>
-							<label><?=__('Text')?> <span>(<?=__('Question')?>)</span></label>
+							<label><?=__('Text')?> <span>(<?=__('Nombre')?>)</span></label>
 							<input type="text" name="text" value="<?=$text?>" />
 						</li>
 						<li>
@@ -50,15 +50,17 @@
 							<tbody>
 								<tr>
 									<th width="5"><input type="checkbox" name="select-all" value="1" data-tooltip="<?=__('Select all')?>" /></th>
-									<th><?=__('Model')?></th>
-									<th class="sortable" abbr="status" title="<?=__('Sort by status')?>"><?=__('Status')?></th>
+									<th><?=__('Nombre')?></th>
+									<th><?=__('Email')?></th>
+									<th><?=__('Fecha')?></th>
 									<th width="5"><?=__('Actions')?></th>
 								</tr>
 								<?php foreach($data as $item): ?>
 								<tr class="<?=$item['mode']?>">
 									<td data-itemname="<?=$item['title']?>"><input type="checkbox" name="id[]" value="<?=$item['id']?>" class="select" /></td>
-									<td><?=Text::limit_chars($item['title'], 55)?></td>
-									<td class="status"><?=__($item['status'])?></td>
+									<td><?=Text::limit_chars($item['fullname'], 55)?></td>
+									<td><?=Text::limit_chars($item['email'], 55)?></td>
+									<td><?=Timestamp::format($item['regdate'])?></td>
 									<td class="actions">
 										<?php if($action_edit): ?><a href="<?=$action_edit?>?id=<?=$item['id']?>" class="edit" data-tooltip="<?=__('Edit')?>"><?=__('Edit')?></a><?php endif; ?>
 										<?php if($action_delete): ?><a href="<?=$action_delete?>?id=<?=$item['id']?>" class="delete" data-tooltip="<?=__('Delete')?>" data-id="<?=$item['id']?>"><?=__('Delete')?></a><?php endif; ?>

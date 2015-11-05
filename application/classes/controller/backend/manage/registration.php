@@ -6,14 +6,14 @@ class Controller_Backend_Manage_Registration extends Controller_Backend_Template
 	{
 		parent::before();
 		
-		$this->model = new Model_Experiences;
+		$this->model = new Model_Registration;
 	}
 	
 	public function action_index()
 	{
 		
 		$page     = Arr::get($_GET, 'page', 1);
-		$order_by = Arr::get($_GET, 'order_by', 'experiences.postdate');
+		$order_by = Arr::get($_GET, 'order_by', 'registration.regdate');
 		$sort     = Arr::get($_GET, 'sort', 'DESC');
 		$status   = Arr::get($_GET, 'status', -1);
 		$text     = Arr::get($_GET, 'text', '');
@@ -57,11 +57,10 @@ class Controller_Backend_Manage_Registration extends Controller_Backend_Template
 		
 			if ( ! $valid->check())
 			{
-				$this->template->errors = $valid->errors('experiences');
+				$this->template->errors = $valid->errors('registration');
 			}
 			else
 			{
-				$data['slug']   = URL::title($data['title'], '-', TRUE);
 				if ($data['id'])
 				{
 					$data['id'] = $this->model->update($data, $_FILES);
@@ -72,7 +71,7 @@ class Controller_Backend_Manage_Registration extends Controller_Backend_Template
 					$data['id'] = $this->model->insert($data, $_FILES);
 					$action = self::INSERT;
 				}
-				$this->_log_activity($data['id'], $data['title'], $action, $data);
+				$this->_log_activity($data['id'], $data['fullname'], $action, $data);
 				
 				Request::current()->redirect($this->_index_action);
 			}

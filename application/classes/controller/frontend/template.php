@@ -32,7 +32,7 @@ class Controller_Frontend_Template extends Controller_Template {
 		$this->_controller = Request::$current->controller();
 		$this->_action     = Request::$current->action();
 
-		FacebookSession::setDefaultApplication(Kohana::$config->load('facebook.appid'), Kohana::$config->load('facebook.secret'));
+//		FacebookSession::setDefaultApplication(Kohana::$config->load('facebook.appid'), Kohana::$config->load('facebook.secret'));
 
 		// Get session data
 		$session = Session::instance();
@@ -84,8 +84,8 @@ class Controller_Frontend_Template extends Controller_Template {
 			$this->template->usrtoken = $this->usr_token;
 			$this->template->usrdata = $this->usr_session;
 
-			$helper = new FacebookRedirectLoginHelper('http://equ.com/');
-			$this->template->FBloginUrl = $helper->getLoginUrl();
+//			$helper = new FacebookRedirectLoginHelper('http://equ.com/');
+//			$this->template->FBloginUrl = $helper->getLoginUrl();
 
 
 

@@ -2,5 +2,5 @@
 
 	return array
 	(
-		'sitename'  => 'Cuatro Vientos',
+		'sitename'  => 'Equ Lifestyle',
 	);
