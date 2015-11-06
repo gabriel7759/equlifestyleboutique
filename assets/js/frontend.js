@@ -2,31 +2,48 @@
 
 $(document).ready(function(){
 
+	$('#frm_registration').on('submit', function(e){
+		e.preventDefault();
+	});
 
+	$('#frm_registration button#send_subscribe').on('click', function(e){
+		e.preventDefault();
+		if(validateForm($('#frm_registration'))){
+			$.post('/api/register', { fullname: $('#frm_name').val(), email: $('#frm_email').val() }, function(data){
+				if(data.success){
+					$('#frm_name').val('');
+					$('#frm_email').val('');
+					$('#frm_registration').hide();
+					$('.formcontainer .thanks').show();
+				} else {
+					alert(data.errordesc);
+				}
+				
+			}, 'json');
+		}
+	});
 
 });
 
 function validateForm(form){
 	var result = true;
-	form.find('input.error,textarea.error').removeClass('error');
 	form.find('.required').each(function(){
 		if($(this).is('[type=checkbox]')){
 			if(!$(this).is(':checked')){
 				alert($(this).attr('title'));
 				result = false;
 			}
-		} else if($(this).val().length == 0){
-			if(!$(this).hasClass('error'))
-				$(this).addClass('error');
+		} else if($(this).val().length == 0 && result){
+			alert($(this).attr('title'));
+			$(this).focus();
 			result = false;
-		} else if($(this).hasClass('email')){
+		} else if($(this).hasClass('email') && result){
 			if(!$(this).val().isEmail()){
-				if(!$(this).hasClass('error'))
-					$(this).addClass('error');
-				alert("Oppgi en gyldig e-postadresse");
+				alert("Enter a valid email address");
+				$(this).focus();
 				result = false;
 			}
-		} else if($(this).hasClass('pwdconfirm') && $('input[name="'+$(this).attr('data-related')+'"]').hasClass('required')){
+		} else if($(this).hasClass('pwdconfirm') && $('input[name="'+$(this).attr('data-related')+'"]').hasClass('required') && result){
 			if($(this).val() != $('input[name="'+$(this).attr('data-related')+'"]').val()){
 				alert("Passord stemmer ikke overens");
 				$(this).focus();

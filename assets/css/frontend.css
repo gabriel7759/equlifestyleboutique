@@ -16,6 +16,16 @@ p{margin:5px 0;}
 :-ms-input-placeholder {color: #292b37;}
 ::-webkit-input-placeholder {color: #292b37;}
 form{overflow:hidden}
+
+.formcontainer {
+	overflow: hidden;
+}
+.formcontainer .thanks {
+	display: none;
+	font-size:	2em;
+	line-height: 3em;
+}
+
 input,select,textarea{border:none;font: 400 1em 'Crimson Text',serif;background: transparent;display:inline-block;padding: 9px 4% 6px;border:1px solid #8a8583; outline:none;width: 100%;margin: 0 0 3%;box-sizing: border-box;}
 button{border: 1px solid #8a8583;background: rgba(255,255,255,.2);cursor:pointer;font: 600 1.1em 'Crimson Text';display: inline-block; color: #292b37;margin: 2% 0 0;float: right;width: 42%;padding: 2% 0 1%;}
 button:hover{ opacity:.8}

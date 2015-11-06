@@ -174,42 +174,17 @@ Cookie::$expiration = Date::YEAR;
  
 Route::set('backend', array('Controller_Backend_Template', 'route'));
 
+Route::set('api', 'api/<action>')
+	->defaults(array(
+		'controller' => 'api',
+		'action'     => 'index'
+	));
+
 Route::set('homepage', '(<homepage>(/<id>))', array('id' => '[0-9\-]+', 'homepage' => 'homepage|vise'))
 	->defaults(array(
 		'directory'  => 'frontend',
 		'controller' => 'homepage',
 	));
-
-
-Route::set('contacto', 'contacto')
-	->defaults(array(
-		'directory'  => 'frontend',
-		'controller' => 'homepage',
-		'action'     => 'contact'
-	));
-
-Route::set('experiencias', 'experiencias')
-	->defaults(array(
-		'directory'  => 'frontend',
-		'controller' => 'homepage',
-		'action'     => 'experiencias'
-	));
-
-Route::set('experienciasdet', 'experiencias/<year>/<month>/<slug>', array('year' => '[0-9]+', 'month' => '[0-9]+', 'slug' => '[a-z0-9\-\.]+'))
-	->defaults(array(
-		'directory'  => 'frontend',
-		'controller' => 'homepage',
-		'action'     => 'notes'
-	));
-
-Route::set('nosotros', 'nosotros')
-	->defaults(array(
-		'directory'  => 'frontend',
-		'controller' => 'homepage',
-		'action'     => 'nosotros'
-	));
-
-
 
 Route::set('content', '<level1>(/<level2>(/<level3>))', array('level1' => '[a-z0-9\-\.]+', 'level2' => '[a-z0-9\-\.]+', 'level3' => '[a-z0-9\-\.]+'))
 	->defaults(array(

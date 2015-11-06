@@ -91,22 +91,47 @@ class Model_Registration extends Model {
 	}
 
 
+	public function check($email)
+	{
+		$check = DB::query(Database::SELECT, "
+				SELECT id FROM registration WHERE email = :email AND is_deleted = 0 ORDER BY id ASC LIMIT 0,1
+			")
+			->parameters(array(
+				':email' => $email,
+			))
+			->execute()
+			->current();
+		
+		return $check;
+	}
 
 	public function insert($data)
 	{
-		$date = explode("-", $data['regdate']);
-		$data['regdate'] = mktime(0,0,0,$date[1],$date[2],$date[0]);
-
-		list($id) = DB::query(Database::INSERT, "
-				INSERT INTO registration (fullname, email, regdate, is_deleted, log_id)
-				VALUES (:fullname, :email, :regdate, 0, 0)
-			")
-			->parameters(array(
-				':fullname' => $data['fullname'],
-				':email' => $data['email'],
-				':regdate' => $data['regdate'],
-			))
-			->execute();
+		$exists = $this->check($data['email']);
+		if(!$exists){
+			if(strlen($data['regdate'])==10){
+				$date = explode("-", $data['regdate']);
+				$data['regdate'] = mktime(0,0,0,$date[1],$date[2],$date[0]);
+			} else if(strlen($data['regdate'])>10){
+				$parts = explode(" ", $data['regdate']);
+				$date = explode("-", $parts[0]);
+				$time = explode(":", $parts[1]);
+				$data['regdate'] = mktime($time[0],$time[1],$time[2],$date[1],$date[2],$date[0]);
+			}
+	
+			list($id) = DB::query(Database::INSERT, "
+					INSERT INTO registration (fullname, email, regdate, is_deleted, log_id)
+					VALUES (:fullname, :email, :regdate, 0, 0)
+				")
+				->parameters(array(
+					':fullname' => $data['fullname'],
+					':email' => $data['email'],
+					':regdate' => $data['regdate'],
+				))
+				->execute();
+		} else {
+			$id = $exists['id'];
+		}
 		
 		return $id;
 	}

@@ -10,12 +10,14 @@
                     <li><span id="minutes">00</span>minutes</li>
                     <li><span id="seconds">00</span>seconds</li>
                 </ul>
-                
-                <form>
-                	<input type="text" placeholder="Your name">
-                	<input type="text" placeholder="Your email">
-                    <button>Subscribe</button>
+				<div class="formcontainer">
+                <form name="registration" id="frm_registration">
+                	<input type="text" placeholder="Your name" value="" name="fullname" id="frm_name" class="required" title="Enter your name">
+                	<input type="text" placeholder="Your email" value="" name="email" id="frm_email" class="required email" title="Enter your email">
+                    <button type="button" id="send_subscribe">Subscribe</button>
                 </form>
+					<div class="thanks">Thank you</div>
+				</div>
             </div>
         	
         </article>
