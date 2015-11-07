@@ -1,4 +1,5 @@
 		<?php if($action_add): ?><button type="button" class="button add" data-action="<?=$action_add?>"><?=__('Create new')?></button><?php endif; ?>
+		<button type="button" class="button export" data-action="<?=$action_export?>"><?=__('Export')?></button>
 		<div class="box">
 			<div class="box-header clearfix">
 				<h2><?=__('List')?></h2>

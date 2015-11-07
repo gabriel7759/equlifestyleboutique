@@ -81,4 +81,36 @@ class Controller_Backend_Manage_Registration extends Controller_Backend_Template
 
 	}
 
+	public function action_export()
+	{
+		$this->auto_render = FALSE;
+//		$this->response->headers('Content-Type', 'application/vnd.ms-excel');
+		$this->response->headers('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate');
+		
+		$page     = Arr::get($_GET, 'page', 1);
+		$order_by = Arr::get($_GET, 'order_by', 'registration.regdate');
+		$sort     = Arr::get($_GET, 'sort', 'DESC');
+		$status   = Arr::get($_GET, 'status', -1);
+		
+		$data = $this->model->fetch_all(array(
+			'order_by' => $order_by,
+			'sort'     => $sort,
+			'status'   => $status,
+			'text'     => $text,
+		));
+		
+//		$this->response->headers('Content-Type', 'text/html; charset=utf-8');
+//		$this->response->headers('Content-Type', 'text/csv; charset=utf-8');
+		$this->response->headers('Content-Type', 'application/vnd.ms-excel');
+		$filename = "Equ_registros_".time().".xls";
+		$this->response->headers('Content-Disposition', 'attachment; filename='.$filename);
+
+		$content = '<table><tr><th>ID</th><th>Nombre</th><th>Email</th><th>Fecha registro</th></tr>';
+		foreach($data as $dat)
+			$content .= '<tr><td>'.$dat['id'].'</td><td>'.$dat['fullname'].'</td><td>'.$dat['email'].'</td><td>'.Timestamp::format($dat['regdate']).'</td></tr>';
+		$content .= '</table>';
+
+		$this->response->body($content);
+	}
+
 }

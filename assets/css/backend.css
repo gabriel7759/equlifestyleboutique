@@ -171,6 +171,14 @@ input[name='select-all'] {
 	right: 0;
 	top: 105px;
 }
+.button.export {
+	/*float: right;*/
+	padding: 3px 12px;
+	font-size: 14px;
+	position: absolute; 
+	right: 130px;
+	top: 105px;
+}
 
 
 .field {

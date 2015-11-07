@@ -324,6 +324,12 @@
 			url.push('index');
 		self.location.href = url.join('/');
 	});
+	$('#content button.export').on('click', function(){
+		var url = self.location.href.split('/');
+			url.pop();
+			url.push('export');
+		self.location.href = url.join('/');
+	});
 	
 	// form validation
 	$('form.validate').on('submit', function(){
