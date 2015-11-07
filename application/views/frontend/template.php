@@ -75,11 +75,20 @@ document.createElement(e[i]);
 <?=$content?>
     <footer>
     	<article class="inner">
-        	<a href="#">PRIVACY</a>
+        	<a href="#" class="open_privacy">PRIVACY</a>
             <p>© Copyright 2015 EQULifestyle. All rights reserved.</p>
         </article>
     </footer>
 </main>
+<div id="lightbox">
+	<div id="lightbox_cont">
+		<h2><?=$privacy['title']?></h2>
+		<a href="#" class="lbgbx_close">close</a>
+		<div class="cont">
+		<?=$privacy['content']?>
+		</div>
+	</div>
+</div>
 <?=$analytics?>
 </body>
 </html>

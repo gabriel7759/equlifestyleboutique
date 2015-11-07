@@ -577,7 +577,7 @@
 			selector: "textarea",
 			theme: "modern",
 			height: 300,
-			plugins: [ "advlist autolink link image lists charmap print preview hr anchor pagebreak",
+			plugins: [ "advlist autolink link image lists charmap print preview hr anchor pagebreak code",
 						"searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
 						"table contextmenu directionality emoticons paste textcolor responsivefilemanager" ],
 			toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",

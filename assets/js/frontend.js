@@ -22,6 +22,15 @@ $(document).ready(function(){
 			}, 'json');
 		}
 	});
+	
+	$('a.open_privacy').on('click', function(e){
+		e.preventDefault();
+		$('#lightbox').fadeIn();
+	});
+	$('#lightbox a.lbgbx_close').on('click', function(e){
+		e.preventDefault();
+		$('#lightbox').fadeOut();
+	});
 
 });
 

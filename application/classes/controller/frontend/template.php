@@ -81,9 +81,9 @@ class Controller_Frontend_Template extends Controller_Template {
 			$this->template->is_home    = FALSE;
 			$this->template->action     = $this->_action;
 			$this->template->controller = $this->_controller;
-			$this->template->usrtoken = $this->usr_token;
-			$this->template->usrdata = $this->usr_session;
 
+			$this->template->privacy = Model::factory('Content')->fetch(array('id'=>1));
+		
 //			$helper = new FacebookRedirectLoginHelper('http://equ.com/');
 //			$this->template->FBloginUrl = $helper->getLoginUrl();
 
